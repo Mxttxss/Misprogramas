@@ -10,13 +10,12 @@ struct Dato* crearDato() {
     struct Dato *nuevo = (struct Dato*) malloc(sizeof(struct Dato));
     
     if (nuevo == NULL) {
-        printf("Error\n");
         return NULL;
     }
     
     printf("Ingresa el valor del dato: ");
-    scanf("%d", &nuevo->d);
-    nuevo->Ptrsig = NULL;
+    scanf("%d", &nuevo);
+    Ptrsig = NULL;
     return nuevo; 
 
 int main(void) {
