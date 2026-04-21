@@ -6,13 +6,13 @@ struct Dato {
     struct Dato *Ptrsig;
 };
 
-struct Dato* crearDato() {
-    struct Dato *nuevo = (struct Dato*) malloc(sizeof(struct Dato));
+struct Dato* crearDato(void) {
+    Ptrtemp = (struct Dato*) malloc(sizeof(struct Dato));
     
     if (nuevo == NULL) {
         return NULL;
     }
-    
+
     printf("Ingresa el valor del dato: ");
     scanf("%d", &nuevo);
     Ptrsig = NULL;
@@ -20,7 +20,7 @@ struct Dato* crearDato() {
 
 int main(void) {
     struct Dato *Ptr = NULL; 
-    struct Dato *nuevo; 
+    Ptrtemp = crearDato(); 
     int opcion;
 
     do {
