@@ -7,16 +7,18 @@ struct Dato {
 };
 
 struct Dato* crearDato(void) {
+    Ptrtemp = NULL; 
     Ptrtemp = (struct Dato*) malloc(sizeof(struct Dato));
     
-    if (nuevo == NULL) {
+    if (Ptrtemp == NULL) {
+        printf("Errorcito"); 
         return NULL;
     }
 
     printf("Ingresa el valor del dato: ");
-    scanf("%d", &nuevo);
-    Ptrsig = NULL;
-    return nuevo; 
+    scanf("%d", &Ptrtemp->d);
+    Ptrtemp->Ptrsig = NULL;
+    return Ptrtemp; 
 
 int main(void) {
     struct Dato *Ptr = NULL; 
@@ -36,8 +38,7 @@ int main(void) {
             case 1:
                 nuevo = crearDato(); 
                 if (nuevo != NULL) {
-                    Ptrsig = Ptr; 
-                    Ptr = nuevo;         
+                    Ptrtemp->Ptrsig = Ptr;          
                 }
                 break;
                 
