@@ -1,4 +1,4 @@
-#include <stdio.h>
+ #include <stdio.h>
 #include <stdlib.h> 
 
 struct Dato {
@@ -36,10 +36,11 @@ int main(void) {
 
         switch (opcion) {
             case 1:
-                nuevo = crearDato(); 
-                if (nuevo != NULL) {
-                    Ptrtemp->Ptrsig = Ptr;          
-                }
+                Ptrtemp = crearDato(); 
+                if (Ptrtemp == NULL) {
+                    printf(Error de chava...);         
+                }else{
+                    if(Ptr == NULL);
                 break;
                 
             case 2:
@@ -55,3 +56,6 @@ int main(void) {
 
     return 0;
 }
+
+
+//Liberar nodo de tarea de chava bienestar y así... 
