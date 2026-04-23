@@ -37,10 +37,16 @@ int main(void) {
         switch (opcion) {
             case 1:
                 Ptrtemp = crearDato(); 
-                if (Ptrtemp == NULL) {
+                if (Ptrtemp == NULL) 
                     printf(Error de chava...);         
-                }else{
+                else
                     if(Ptr == NULL);
+                       Ptr = Ptrtemp;
+                    else {
+                        Ptraux = Ptr;
+                        While(Ptraux -> Ptrsig != NULL);
+                             Ptr = Ptraux -> Ptrsig;
+                        Ptraux -> Ptrsig = Ptrtemp
                 break;
                 
             case 2:
