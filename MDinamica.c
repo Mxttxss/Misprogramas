@@ -1,9 +1,9 @@
- #include <stdio.h>
+    #include <stdio.h>
 #include <stdlib.h> 
 
 struct Dato {
     int d;
-    struct Dato *Ptrsig;
+    struct Dato *Ptrsig, *Ptr, *Ptraux;
 };
 
 struct Dato* crearDato(void) {
@@ -50,6 +50,16 @@ int main(void) {
                 break;
                 
             case 2:
+             if(Ptr == NULL); 
+                 printf("No hay nada y así); 
+             if (Ptr->Ptrsig == NULL); 
+                 free(Ptr); 
+                 Ptr = NULL; 
+
+             Ptraux = Ptraux->Ptrsig; 
+             free(Ptraux->Ptrsig);
+             Ptraux->Ptrsig == NULL; 
+             
                 break;
                 
             case 3:
