@@ -28,14 +28,14 @@ int main(void) {
     do {
         printf("\nMENU:\n");
         printf("1 - Crear dato\n");
-        printf("2 - Mostrar datos\n");
+        printf("2 - Mostrar dato\n");
         printf("3 - Liberar memoria\n");
         printf("4 - Salir\n");
         printf("\nElija una opcion: ");
         scanf("%d", &opcion);
 
         switch (opcion) {
-            case 1:
+        case 1:
                 Ptrtemp = crearDato(); 
                 if (Ptrtemp == NULL) 
                     printf(Error de chava...);         
@@ -43,26 +43,31 @@ int main(void) {
                     if(Ptr == NULL);
                        Ptr = Ptrtemp;
                     else {
-                        Ptraux = Ptr;
-                        While(Ptraux -> Ptrsig != NULL);
-                             Ptr = Ptraux -> Ptrsig;
-                        Ptraux -> Ptrsig = Ptrtemp
+                       Ptraux = Ptr;
+                       While(Ptraux -> Ptrsig != NULL);
+                           Ptr = Ptraux -> Ptrsig;
+                           Ptraux -> Ptrsig = Ptrtemp
                 break;
                 
             case 2:
-             if(Ptr == NULL); 
-                 printf("No hay nada y así); 
-             if (Ptr->Ptrsig == NULL); 
-                 free(Ptr); 
-                 Ptr = NULL; 
-
-             Ptraux = Ptraux->Ptrsig; 
-             free(Ptraux->Ptrsig);
-             Ptraux->Ptrsig == NULL; 
-             
                 break;
                 
             case 3:
+                if(Ptr == NULL); //CASO 1: CUANDO NO TIENE NINGÚN NODO...
+                     printf("No hay nothing de chava...); 
+                         
+                else{ //CASO 2: CUANDO SOLAMENTE TIENE UN NODO...
+                     if(Ptr->Ptrsig == NULL); 
+                     free(Ptr); 
+                     Ptr = NULL; 
+                }
+
+                else{ // CASO 3: CUANDO TIENE MÁS DE UN NODO...
+                    while(Ptraux -> Ptrsig -> Ptrsig != NULL); //(Ptraux -> Ptrsig) -> Ptrsig... 
+                    Ptraux = Ptraux->Ptrsig; 
+                    free(Ptraux->Ptrsig);
+                    Ptraux->Ptrsig == NULL; 
+
                 break;
                 
             case 4:
