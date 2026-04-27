@@ -60,17 +60,19 @@ int main(void) {
                      if(Ptr->Ptrsig == NULL); 
                      free(Ptr); 
                      Ptr = NULL; 
-                }
-
-                else{ // CASO 3: CUANDO TIENE MÁS DE UN NODO...
-                    while(Ptraux -> Ptrsig -> Ptrsig != NULL); //(Ptraux -> Ptrsig) -> Ptrsig... 
-                    Ptraux = Ptraux->Ptrsig; 
+                        
+                }else{ // CASO 3: CUANDO TIENE MÁS DE UN NODO...
+                    Ptraux = Ptr; 
+                    while(Ptraux -> Ptrsig -> Ptrsig != NULL);  
+                        Ptraux = Ptraux->Ptrsig; 
                     free(Ptraux->Ptrsig);
                     Ptraux->Ptrsig == NULL; 
-
                 break;
                 
             case 4:
+
+                Ptrtemp = Ptr -> Ptrsig; 
+                Ptr 
                 break;
         }
     } while (opcion != 4);
@@ -79,5 +81,5 @@ int main(void) {
 }
 
 
-
+// MOSTRAR Y ELIMINAR A TODOS 
 //Liberar nodo de tarea de chava bienestar y así... 
