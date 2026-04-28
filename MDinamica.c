@@ -47,7 +47,8 @@ int main(void) {
                        Ptraux = Ptr;
                        while(Ptraux -> Ptrsig != NULL);
                            Ptr = Ptraux -> Ptrsig;
-                           Ptraux -> Ptrsig = Ptrtemp
+                           Ptraux -> Ptrsig = Ptrtemp;
+                    }
                 break;
                 
             case 2:
