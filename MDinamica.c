@@ -86,6 +86,7 @@ int main(void) {
                     free(Ptr); 
                     Ptr = Ptrtemp; 
                 }
+                printf("Saliendo, bye, see you");
                 break;
         }
     } while (opcion != 4);
