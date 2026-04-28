@@ -92,7 +92,3 @@ int main(void) {
 
     return 0;
 }
-
-
-// MOSTRAR Y ELIMINAR A TODOS 
-//Liberar nodo de tarea de chava bienestar y así... 
