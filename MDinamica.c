@@ -7,12 +7,12 @@ struct Dato {
 };
 
 struct Dato* crearDato(void) {
-    Ptrtemp = NULL; 
+    struct Dato *Ptrtemp = NULL; 
     Ptrtemp = (struct Dato*) malloc(sizeof(struct Dato));
     
     if (Ptrtemp == NULL) {
         printf("Errorcito"); 
-        return NULL;
+        return NULL;    
     }
 
     printf("Ingresa el valor del dato: ");
@@ -22,7 +22,8 @@ struct Dato* crearDato(void) {
 
 int main(void) {
     struct Dato *Ptr = NULL; 
-    Ptrtemp = crearDato(); 
+    struct Dato *Ptrtemp = NULL;
+    struct Dato *Ptraux = NULL; 
     int opcion;
 
     do {
@@ -44,12 +45,21 @@ int main(void) {
                        Ptr = Ptrtemp;
                     else {
                        Ptraux = Ptr;
-                       While(Ptraux -> Ptrsig != NULL);
+                       while(Ptraux -> Ptrsig != NULL);
                            Ptr = Ptraux -> Ptrsig;
                            Ptraux -> Ptrsig = Ptrtemp
                 break;
                 
             case 2:
+                if (Ptr == NULL) {
+                    printf("No hay nothing de chava :("); 
+                } else {
+                    printf("\nDATOS\n"); 
+                    Ptraux = Ptr; 
+                    while(Ptraux != NULL); 
+                        printf("%d -> ", Ptraux -> d); 
+                        Ptraux = Ptraux -> Ptrsig; 
+                }
                 break;
                 
             case 3:
@@ -63,16 +73,18 @@ int main(void) {
                         
                 }else{ // CASO 3: CUANDO TIENE MÁS DE UN NODO...
                     Ptraux = Ptr; 
-                    while(Ptraux -> Ptrsig -> Ptrsig != NULL);  
+                    While(Ptraux -> Ptrsig -> Ptrsig != NULL);  
                         Ptraux = Ptraux->Ptrsig; 
                     free(Ptraux->Ptrsig);
                     Ptraux->Ptrsig == NULL; 
                 break;
                 
             case 4:
-
-                Ptrtemp = Ptr -> Ptrsig; 
-                Ptr 
+                while (Ptr != NULL) {
+                    Ptrtemp = Ptr -> Ptrsig; 
+                    free(Ptr); 
+                    Ptr = Ptrtemp; 
+                }
                 break;
         }
     } while (opcion != 4);
