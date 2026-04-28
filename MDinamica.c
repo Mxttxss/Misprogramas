@@ -16,8 +16,8 @@ struct Dato* crearDato(void) {
     }
 
     printf("Ingresa el valor del dato: ");
-    scanf("%d", &Ptrtemp->d);
-    Ptrtemp->Ptrsig = NULL;
+    scanf("%d", &Ptrtemp -> d);
+    Ptrtemp -> Ptrsig = NULL;
     return Ptrtemp; 
 
 int main(void) {
@@ -51,7 +51,7 @@ int main(void) {
                     }
                 break;
                 
-            case 2:
+        case 2:
                 if (Ptr == NULL) {
                     printf("No hay nothing de chava :("); 
                 } else {
@@ -63,9 +63,9 @@ int main(void) {
                 }
                 break;
                 
-            case 3:
+        case 3:
                 if(Ptr == NULL); //CASO 1: CUANDO NO TIENE NINGÚN NODO...
-                     printf("No hay nothing de chava...); 
+                     printf("No hay nothing de chava..."); 
                          
                 else{ //CASO 2: CUANDO SOLAMENTE TIENE UN NODO...
                      if(Ptr->Ptrsig == NULL); 
@@ -76,14 +76,14 @@ int main(void) {
                     Ptraux = Ptr; 
                     While(Ptraux -> Ptrsig -> Ptrsig != NULL);  
                         Ptraux = Ptraux->Ptrsig; 
-                    free(Ptraux->Ptrsig);
-                    Ptraux->Ptrsig == NULL; 
+                    free(Ptraux -> Ptrsig);
+                    Ptraux -> Ptrsig == NULL; 
                 break;
                 
-            case 4:
+        case 4:
                 while (Ptr != NULL) {
                     Ptrtemp = Ptr -> Ptrsig; 
-                    free(Ptr); 
+                    free(Ptrtemp); 
                     Ptr = Ptrtemp; 
                 }
                 printf("Saliendo, bye, see you");
