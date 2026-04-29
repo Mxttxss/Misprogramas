@@ -3,7 +3,7 @@
 
 struct Dato {
     int d;
-    struct Dato *Ptrsig, *Ptr, *Ptraux;
+    struct Dato *Ptrsig;
 };
 
 struct Dato* crearDato(void) {
@@ -19,7 +19,7 @@ struct Dato* crearDato(void) {
     scanf("%d", &Ptrtemp -> d);
     Ptrtemp -> Ptrsig = NULL;
     return Ptrtemp; 
-}; 
+}
 
 int main(void) {
     struct Dato *Ptr = NULL; 
@@ -39,52 +39,57 @@ int main(void) {
         switch (opcion) {
         case 1:
                 Ptrtemp = crearDato(); 
-                if (Ptrtemp == NULL) 
-                    printf(Error de chava...);         
-                else
-                    if(Ptr == NULL);
+                if (Ptrtemp == NULL){
+                    printf("Error de chava...");         
+                } else {
+                    if(Ptr == NULL){
                        Ptr = Ptrtemp;
-                    else {
+                    } else {
                        Ptraux = Ptr;
-                       while(Ptraux -> Ptrsig != NULL);
-                           Ptr = Ptraux -> Ptrsig;
-                           Ptraux -> Ptrsig = Ptrtemp;
+                       while(Ptraux -> Ptrsig != NULL){ 
+                           Ptraux = Ptraux -> Ptrsig;
+                       }
+                       Ptraux -> Ptrsig = Ptrtemp;
                     }
+                }
                 break;
                 
         case 2:
                 if (Ptr == NULL) {
-                    printf("No hay nothing de chava :("); 
+                    printf("No hay nothing de chava :(\n"); 
                 } else {
                     printf("\nDATOS\n"); 
                     Ptraux = Ptr; 
-                    while(Ptraux != NULL); 
+                    while(Ptraux != NULL){ 
                         printf("%d -> ", Ptraux -> d); 
                         Ptraux = Ptraux -> Ptrsig; 
+                    }
                 }
                 break;
                 
         case 3:
-                if(Ptr == NULL); //CASO 1: CUANDO NO TIENE NINGÚN NODO...
+                if(Ptr == NULL){ //CASO 1: CUANDO NO TIENE NINGÚN NODO...
                      printf("No hay nothing de chava..."); 
                          
-                else{ //CASO 2: CUANDO SOLAMENTE TIENE UN NODO...
-                     if(Ptr->Ptrsig == NULL); 
+                } else if (Ptr->Ptrsig == NULL){ //CASO 2: CUANDO SOLO TIENE UN NODO...
                      free(Ptr); 
                      Ptr = NULL; 
                         
                 }else{ // CASO 3: CUANDO TIENE MÁS DE UN NODO...
                     Ptraux = Ptr; 
-                    While(Ptraux -> Ptrsig -> Ptrsig != NULL);  
+                    while((Ptraux -> Ptrsig) -> Ptrsig != NULL){
                         Ptraux = Ptraux->Ptrsig; 
+                    }
                     free(Ptraux -> Ptrsig);
                     Ptraux -> Ptrsig == NULL; 
+                }
                 break;
                 
         case 4:
                 while (Ptr != NULL) {
                     Ptrtemp = Ptr -> Ptrsig; 
-                    free(Ptrtemp); 
+                    printf("Liberando y así"); 
+                    free(Ptr); 
                     Ptr = Ptrtemp; 
                 }
                 printf("Saliendo, bye, see you");
