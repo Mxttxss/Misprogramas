@@ -19,6 +19,7 @@ struct Dato* crearDato(void) {
     scanf("%d", &Ptrtemp -> d);
     Ptrtemp -> Ptrsig = NULL;
     return Ptrtemp; 
+}; 
 
 int main(void) {
     struct Dato *Ptr = NULL; 
