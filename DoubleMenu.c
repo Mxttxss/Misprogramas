@@ -22,80 +22,16 @@ struct Dato* crearDato(void) {
     return Ptrtemp; 
 }
 
-void submenuNivel2(void) {
-    int op2;
-    do {
-        printf("\n--- SUBMENU NIVEL 2 ---\n");
-        printf("1 - Opcion A\n");
-        printf("2 - Opcion B\n");
-        printf("3 - Regresar\n");
-        printf("Elige opcion: ");
-        scanf("%d", &op2);
-
-        switch(op2) {
-            case 1:
-                printf("Ejecutando Opcion A del Submenu 2\n");
-                break;
-            case 2:
-                printf("Ejecutando Opcion B del Submenu 2\n");
-                break;
-            case 3:
-                printf("Regresando a Submenu Nivel 1\n");
-                break;
-            default:
-                printf("Opcion invalida\n");
-        }
-    } while(op2 != 3);
-}
-
-void submenuFunciones(struct Dato *Ptr) {
-    int op1;
-    struct Dato *Ptraux;
-    
-    do {
-        printf("\n--- SUBMENU FUNCIONES ---\n");
-        printf("1 - Mostrar datos\n");
-        printf("2 - Ir a Submenu Nivel 2\n");
-        printf("3 - Regresar al menu principal\n");
-        printf("Elige opcion: ");
-        scanf("%d", &op1);
-
-        switch(op1) {
-            case 1:
-                if (Ptr == NULL) {
-                    printf("No hay nothing de chava :(\n"); 
-                } else {
-                    printf("\nDATOS: "); 
-                    Ptraux = Ptr; 
-                    while(Ptraux != NULL){ 
-                        printf("%d -> ", Ptraux->d); 
-                        Ptraux = Ptraux->Ptrsig; 
-                    }
-                    printf("NULL\n");
-                }
-                break;
-            case 2:
-                submenuNivel2();
-                break;
-            case 3:
-                printf("Regresando al menu principal\n");
-                break;
-            default:
-                printf("Opcion invalida\n");
-        }
-    } while(op1 != 3);
-}
-
 int main(void) {
     struct Dato *Ptr = NULL; 
     struct Dato *Ptrtemp = NULL;
     struct Dato *Ptraux = NULL; 
-    int opcion;
+    int opcion, op1, op2;
 
     do {
         printf("\nMENU PRINCIPAL:\n");
         printf("1 - Crear dato\n");
-        printf("2 - Funciones\n"); // Cambiado
+        printf("2 - Funciones\n"); 
         printf("3 - Liberar memoria\n");
         printf("4 - Salir\n");
         printf("\nElija una opcion: ");
@@ -120,26 +56,75 @@ int main(void) {
                 }
                 break;
                 
-        case 2:
-                submenuFunciones(Ptr); // Llamamos al submenu y le pasamos Ptr
+        case 2: // Todo el submenu va aquí adentro
+                do {
+                    printf("\nMENÚ\n");
+                    printf("\n");
+                    printf("\n");
+                    printf("\n");
+                    printf("Elige opcion: ");
+                    scanf("%d", &op1);
+
+                    switch(op1) {
+                        case 1: 
+                            printf("\n");
+                            break;
+                        case 2:
+                            printf("\n");
+                            break;
+                        case 3:
+                            printf("\n");
+                            break;
+                        }
+                    } while(op2 != 3);
+                    break;
+                        
+                        case 2: 
+                            do {
+                                printf("\nMENÚ\n");
+                                printf("\n");
+                                printf("\n");
+                                printf("\n");
+                                printf("Elige opcion: ");
+                                scanf("%d", &op2);
+
+                                switch(op2) {
+                                    case 1:
+                                        printf("\n");
+                                        break;
+                                    case 2:
+                                        printf("\n");
+                                        break;
+                                    case 3:
+                                        printf("\n");
+                                        break;
+                                }
+                            } while(op2 != 3);
+                            break;
+                            
+                        case 3:
+                            printf("COME BAKC AL MENÚ\n");
+                            break;
+                    }
+                } while(op1 != 3);
                 break;
                 
         case 3:
-                if(Ptr == NULL){ //CASO 1: CUANDO NO TIENE NINGÚN NODO
+                if(Ptr == NULL){ 
                      printf("No hay nothing de chava...\n"); 
                          
-                } else if (Ptr->Ptrsig == NULL){ //CASO 2: SOLO UN NODO
+                } else if (Ptr->Ptrsig == NULL){ 
                      free(Ptr); 
                      Ptr = NULL; 
                      printf("Unico nodo liberado\n");
                         
-                } else { // CASO 3: MAS DE UN NODO
+                } else { 
                     Ptraux = Ptr; 
                     while((Ptraux->Ptrsig)->Ptrsig != NULL){
                         Ptraux = Ptraux->Ptrsig; 
                     }
                     free(Ptraux->Ptrsig);
-                    Ptraux->Ptrsig = NULL; // CORREGIDO: = no ==
+                    Ptraux->Ptrsig = NULL; 
                     printf("Ultimo nodo liberado\n");
                 }
                 break;
