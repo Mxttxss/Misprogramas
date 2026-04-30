@@ -56,7 +56,7 @@ int main(void) {
                 }
                 break;
                 
-        case 2: // Todo el submenu va aquí adentro
+        case 2: 
                 do {
                     printf("\nMENÚ\n");
                     printf("\n");
