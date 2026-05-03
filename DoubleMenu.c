@@ -22,8 +22,25 @@ struct Dato* crearDato(void) {
     return Ptrtemp; 
 }
 
-void Contar(){
+void Buscar (struct Dato *Ptr) {
+    if (Ptr == NULL){
+        printf("No hay nada"); 
+        return; 
+    int BuscarDato, Dato = 0, Lugar = 1; 
+        if(Ptraux -> == BuscarDato) {
+            printf("Dato %d", Dato); 
+            Dato = 1; 
+        }
+        Ptraux = Ptraux -> Ptrsig; 
+        Lugar++
+    }
+    if (!Dato){
+        printf("El dato no se pudo encontrar, pipipipi", Dato); 
+    }
+}
 
+void Contar (int cont) {
+    printf("Hay %d de Nodos", cont); 
 }
 
 
@@ -68,7 +85,7 @@ int main(void) {
                     printf("\nSUB-MENÚ-1\n");
                     printf("1 - Buscar\n");
                     printf("2 - Contar\n");
-                    printf("3 - Reemplazar\n"); //Primero busca un dato, lo busca y lo reemplaza... 
+                    printf("3 - Reemplazar\n"); //Primero busca un dato y luego lo reemplaza...
                     printf("4 - Ordenar\n"); 
                     printf("5 - Regresar al menú principal\n");
                     printf("\nElige una opción: ");
@@ -76,10 +93,10 @@ int main(void) {
 
                     switch(op1) {
                         case 1: 
-                            printf("\n");
+                            Buscar(Ptr);
                             break;
                         case 2:
-                            printf("El total de nodos es: %d\n", cont);
+                            Contar(cont); 
                             break;
                         case 3:
                             printf("\n");
@@ -91,7 +108,7 @@ int main(void) {
                             printf("\n");
                             break; 
                         }
-                    } while(op1 != 3);
+                    } while(op1 != 5);
 
                     break;
         
