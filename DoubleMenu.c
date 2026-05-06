@@ -26,8 +26,11 @@ void Buscar (struct Dato *Ptr) {
     if (Ptr == NULL){
         printf("No hay nada"); 
         return; 
+    }
     int BuscarDato, Dato = 0, Lugar = 1; 
-        if(Ptraux -> == BuscarDato) {
+        struct Dato *Ptraux = Ptr; 
+        while (Ptraux != NULL){
+            if (Ptraux -> d == BuscarDato) {
             printf("Dato %d", Dato); 
             Dato = 1; 
         }
@@ -42,6 +45,21 @@ void Buscar (struct Dato *Ptr) {
 void Contar (int cont) {
     printf("Hay %d de Nodos", cont); 
 }
+
+void Remplazar (struct Dato **Ptr){
+    struct Dato *Ptraux; 
+    struct Dato *Ptrant;
+    struct Dato *Ptrtemp; 
+    
+    if (Ptraux -> Dato > (Ptraux -> Ptrsig) -> Dato){
+        Ptrtemp = Ptraux;
+        Ptraux = Ptraux -> Ptrsig;
+        Ptrtemp -> Ptrsig = Ptraux -> Ptrsig;
+        Ptraux -> Ptrsig = Ptrtemp;
+        Ptrant -> Ptrsig = Ptraux; 
+    }
+    Ptrant = Ptraux;
+    Ptraux = Ptraux -> Ptrsig; 
 
 
 int main(void) {
