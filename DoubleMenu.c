@@ -3,7 +3,7 @@
 #include <stdlib.h> 
 
 struct Dato {
-    int d, cont;
+    int d;
     struct Dato *Ptrsig;
 };
 
@@ -22,12 +22,17 @@ struct Dato* crearDato(void) {
     return Ptrtemp; 
 }
 
-void Buscar (struct Dato *Ptr) {
+void Buscar (struct Dato *Ptr) {}
+    struct Dato *Ptraux = Ptr;
+
+    int BuscarDato; 
+    int Encontrar  = 0;
+    int lugar = 1; 
     if (Ptr == NULL){
-        printf("No hay nada"); 
+        printf("No hay nada, triste"); 
         return; 
     }
-    int BuscarDato, Dato = 0, Lugar = 1; 
+     
         struct Dato *Ptraux = Ptr; 
         while (Ptraux != NULL){
             if (Ptraux -> d == BuscarDato) {
@@ -46,21 +51,40 @@ void Contar (int cont) {
     printf("Hay %d de Nodos", cont); 
 }
 
-void Remplazar (struct Dato **Ptr){
+void Ordenar (struct Dato **Ptr){
+    struct Dato *Ptraux = Ptr; 
+
     struct Dato *Ptraux; 
     struct Dato *Ptrant;
     struct Dato *Ptrtemp; 
+    int cambiar; 
     
     if (Ptraux -> Dato > (Ptraux -> Ptrsig) -> Dato){
-        Ptrtemp = Ptraux;
-        Ptraux = Ptraux -> Ptrsig;
-        Ptrtemp -> Ptrsig = Ptraux -> Ptrsig;
-        Ptraux -> Ptrsig = Ptrtemp;
-        Ptrant -> Ptrsig = Ptraux; 
-    }
-    Ptrant = Ptraux;
-    Ptraux = Ptraux -> Ptrsig; 
+       do {
+        cambiar = 0;
+        Ptraux = *Ptr;
+        Ptrant = NULL;
 
+        while (Ptraux->Ptrsig != NULL) {
+            if (Ptraux->d > Ptraux->Ptrsig->d) {
+
+                Ptrtemp = Ptraux->Ptrsig;
+                Ptraux->Ptrsig = Ptrtemp->Ptrsig;
+                Ptrtemp->Ptrsig = Ptraux;
+
+                if (Ptrant == NULL) {
+                    *Ptr = Ptrtemp;
+                } else {
+                    Ptrant->Ptrsig = Ptrtemp;
+                }
+                Ptrant = Ptrtemp;
+                cambiar = 1;
+            } else {
+                Ptrant = Ptraux;
+                Ptraux = Ptraux->Ptrsig;
+            }
+        }
+    } while (cambiar);
 
 int main(void) {
     struct Dato *Ptr = NULL; 
