@@ -55,7 +55,7 @@ void eliminar(int valor) {
             }
             else {
                 Ptraux -> Ptrant -> Ptrsig = Ptraux -> Ptrsig;
-                Ptraux -> Ptrsig -> Ptrant = Ptraux -> ant;
+                Ptraux -> Ptrsig -> Ptrant = Ptraux -> Ptrant;
 
                 if(Ptraux == Ptrtemp) {
                     Ptrtemp = Ptraux -> Ptrsig;
